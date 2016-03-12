@@ -17,10 +17,11 @@
   if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $sql = "SELECT * FROM UserProfile WHERE Email='".$email."' AND Password='".$password."' LIMIT 1";
-    $response = mysql_query($sql);
-    // got a response
-    if (mysql_num_rows($response) == 1) {
+    // ****** MIGHT BE ISSUES WITH THIS QUERY ******
+    $query = 'SELECT * FROM UserProfile WHERE Email="'.$email.'" AND Password="'.$password.'" LIMIT 1';
+    $result = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_assoc($result)) {
       // code here to validate login, for now echo
       echo "Success!";
       exit();
@@ -28,6 +29,7 @@
       echo "Fail";
       exit();
     }
+    mysqli_free_result($result);
   }
 
   // Close the Connection
