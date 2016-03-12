@@ -3,7 +3,7 @@
   $host = "gamesexchange.ckfgkbliiowl.us-east-1.rds.amazonaws.com";
   $user = "teamshawerma";
   $pass = "shawerma1";
-  $db = "gamesexchange";
+  $db = "GamesExchange";
   //$port = 3306;
 
   $connection = mysqli_connect($host, $user, $pass, $db);
@@ -23,7 +23,10 @@
 
     while ($row = mysqli_fetch_assoc($result)) {
       // code here to validate login, for now echo
+      
       echo "Success!";
+
+      
       exit();
     } 
     mysqli_free_result($result);
