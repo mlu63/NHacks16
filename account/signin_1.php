@@ -23,12 +23,9 @@
 
     while ($row = mysqli_fetch_assoc($result)) {
       // code here to validate login, for now echo
-      
-      echo "Success!";
-
-      
-      exit();
+      echo "Success!";   
     } 
+    echo "Failure!";
     mysqli_free_result($result);
   }
 
