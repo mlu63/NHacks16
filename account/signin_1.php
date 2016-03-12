@@ -3,11 +3,16 @@
   $host = "ec2-52-23-196-2.compute-1.amazonaws.com";
   $user = "teamshawerma";
   $pass = "shawerma1";
-  $db = "gamesexchange";
+  $db = "GamesExchange";
+  //$port = 3306;
 
-  mysql_connect($host, $user, $pass);
-  mysql_select_db($db);
-  
+  $connection = mysqli_connect($host, $user, $pass, $db);
+  if (mysqli_connect_errno()) {
+    die("database connection failed :" .
+    mysqli_connect_error() .
+    "(" . mysqli_connect_errno() . ")");
+  }
+
   // check if the e-mail is set
   if (isset($_POST['email'])) {
     $email = $_POST['email'];
@@ -24,6 +29,9 @@
       exit();
     }
   }
+
+  // Close the Connection
+  mysqli_close($connection);
 ?>
 
 <!DOCTYPE html>
