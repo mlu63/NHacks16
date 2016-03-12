@@ -25,10 +25,7 @@
       // code here to validate login, for now echo
       echo "Success!";
       exit();
-    } else {
-      echo "Fail";
-      exit();
-    }
+    } 
     mysqli_free_result($result);
   }
 
