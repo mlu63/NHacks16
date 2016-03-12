@@ -1,9 +1,9 @@
 <!-- PHP to handle DB interactions and login -->
 <?php
-  $host = "ec2-52-23-196-2.compute-1.amazonaws.com";
+  $host = "gamesexchange.ckfgkbliiowl.us-east-1.rds.amazonaws.com";
   $user = "teamshawerma";
   $pass = "shawerma1";
-  $db = "GamesExchange";
+  $db = "gamesexchange";
   //$port = 3306;
 
   $connection = mysqli_connect($host, $user, $pass, $db);
