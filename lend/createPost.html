@@ -6,6 +6,7 @@
   <title>Starter Template - Materialize</title>
 
   <!-- CSS  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -14,46 +15,83 @@
 
   <!-- Header -->
 
-  <!-- <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">gamesexchange</a></div>
-  </nav> -->
+  <nav class="orange" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo">GMC</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="../account/signin.html">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="../account/signin.html">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
+      <br><br>
+      <h1 class="header center light-blue-text">Gamers Make <strong>¢</strong>ents</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A Trading Platform for Lending Games.</h5>
+      </div>
+      <br><br>
       <div class="row">
-       <form class="col s12">
-         <div class="row">
-           <div class="input-field col s6">
-             <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-             <label for="first_name">First Name</label>
-           </div>
-           <div class="input-field col s6">
-             <input id="last_name" type="text" class="validate">
-             <label for="last_name">Last Name</label>
-           </div>
-         </div>
-         <div class="row">
-           <div class="input-field col s12">
-             <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-             <label for="disabled">Disabled</label>
-           </div>
-         </div>
-         <div class="row">
-           <div class="input-field col s12">
-             <input id="password" type="password" class="validate">
-             <label for="password">Password</label>
-           </div>
-         </div>
-         <div class="row">
-           <div class="input-field col s12">
-             <input id="email" type="email" class="validate">
-             <label for="email">Email</label>
-           </div>
-         </div>
-       </form>
-     </div>
+        <form class="col s12">
+
+          <div class="input-field col s8 offset-s2">
+            <input id="post_title" type="text" class="validate">
+            <label for="post_title">Game Title</label>
+          </div>
+
+          <div class="input-field col s2 offset-s5">
+          <!-- Dropdown Trigger -->
+            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Console</a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!">Xbox One</a></li>
+              <li><a href="#!">PS4</a></li>
+              <li><a href="#!">Wii U</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">Xbox 360</a></li>
+              <li><a href="#!">PS3</a></li>
+              <li><a href="#!">Wii</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">Other</a></li>
+            </ul>
+          </div>
+
+        </form>
+      </div>
+      <br><br>
+      <div class="row center">
+        <a href="" id="download-button" class="btn-large btn-rnd waves-effect waves-light orange">Post</a>
+      </div>
+    <br><br>
+    <br><br>
+    <br><br>
     </div>
   </div>
+
+  <!-- Footer -->
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+       <!-- <div class="col l6 s12"> -->
+
+          <p class="grey-text text-lighten-4" align="center">NHacks'16 Project
+          </br>
+          <p class = "grey-text text-lighten-4" align="center">Created by <strong>Michael, Santanu, Aditya, and Joe.</strong>
+
+    </div>
+    <div class="footer-copyright">
+      <div class="container" align="center">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
