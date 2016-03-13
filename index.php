@@ -1,9 +1,3 @@
-<?php 
-  if (isset($_SESSION['loggedin']) == true) {
-    $btn_status = "btn-large btn-rnd waves-effect waves-light orange";
-    $log_in_or_nah = ""
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +14,9 @@
 <body>
 
   <!-- Logged in --> 
-  <!--
   <?php
-  if ($_SESSION['loggedin'] == true) {
-  ?>-->
+    if ($_SESSION['loggedin'] == true) {
+  ?>
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">GC</a>
       <ul class="right hide-on-med-and-down">
@@ -57,12 +50,11 @@
     <br><br>
     </div>
   </div>
-
   <!-- Not logged in -->
-<!--
+
   <?php
-  } else {
-  ?> -->
+    } else {
+  ?>
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">GC</a>
       <ul class="right hide-on-med-and-down">
@@ -97,11 +89,10 @@
     </div>
   </div>
 
-<!--
   <?php
-  }
+    }
   ?>
--->
+
   <!-- Footer -->
 
   <footer class="page-footer orange">
