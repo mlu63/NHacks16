@@ -19,6 +19,7 @@
     if ($count == 1) {
       //session_register("myemail");
       $_SESSION['login_user'] = $myemail;
+      $_SESSION['loggedin'] = true;
       header("location: welcome.php");
 
     } else {
@@ -81,7 +82,6 @@
                </form>
                
                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
-          
             </div>
         
          </div>
