@@ -18,6 +18,7 @@
     if ($count == 1) {
       session_register("myemail");
       $_SESSION['login_user'] = $myemail;
+      header("location: welcome.php");
     } else {
       $error = "Invalid Information";
     }
