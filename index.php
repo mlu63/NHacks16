@@ -20,9 +20,10 @@
 <body>
 
   <!-- Logged in --> 
+  <!--
   <?php
-    if ($_SESSIOn['loggedin'] == true) {
-  ?>
+  if ($_SESSION['loggedin'] == true) {
+  ?>-->
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">GC</a>
       <ul class="right hide-on-med-and-down">
@@ -58,11 +59,11 @@
   </div>
 
   <!-- Not logged in -->
-
+<!--
   <?php
-    } else {
-  ?>
-    <nav class="orange" role="navigation">
+  } else {
+  ?> -->
+  <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">GC</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="account/signin.html">Login</a></li>
@@ -95,10 +96,12 @@
     <br><br>
     </div>
   </div>
-  <?php
-    }
-  ?>
 
+<!--
+  <?php
+  }
+  ?>
+-->
   <!-- Footer -->
 
   <footer class="page-footer orange">
