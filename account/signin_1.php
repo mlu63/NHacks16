@@ -4,7 +4,7 @@
   include("config.php");
   session_start();
 
-  if (isset($_POST['name']) && $_POST['name'] !== '') {
+  if (isset($_POST['email']) && $_POST['email'] !== '') {
   //if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $myemail = mysqli_real_escape_string($db, $_POST['email']);
@@ -19,8 +19,10 @@
       session_register("myemail");
       $_SESSION['login_user'] = $myemail;
       header("location: welcome.php");
+      echo "ass";
     } else {
       $error = "Invalid Information";
+      echo $error;
     }
   }
 ?>
@@ -56,13 +58,13 @@
         <form action = "" method = "POST" class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
+              <input id="email" name="email" type="email" class="validate">
               <label for="email">E-mail</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
+              <input id="password" name="password" type="password" class="validate">
               <label for="password">Password</label>
             </div>
           </div>
@@ -70,7 +72,7 @@
           <br><br>
 
           <div class="row center">
-            <a href="" id="download-button" input type="submit" class="btn-large btn-rnd waves-effect waves-light light-blue lighten-1">Authenticate</a>
+            <a href="" id="submit" input type="submit" class="btn-large btn-rnd waves-effect waves-light light-blue lighten-1">Authenticate</a>
           </div>
           <!-- TEST BUTTON -->
 
