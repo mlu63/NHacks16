@@ -61,26 +61,36 @@
       <br><br>
       <br><br>
       <div class="row">
-        <form class="col s12">
+        <form  class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
+              <input id="email" form action="" method = "POST" type="email" class="validate">
               <label for="email">E-mail</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
+              <input id="password" form action="" method = "POST" type="password" class="validate">
               <label for="password">Password</label>
             </div>
           </div>
+
+          <!-- TEST BUTTON -->
+
+          <input type="submit" value="go"/>
+
+
+
         </form>
       </div>
       
+
+      <!-- button doesn't do shit -->
       <br><br>
+      <!--
       <div class="row center">
-        <a href="" id="download-button" class="btn-large btn-rnd waves-effect waves-light light-blue lighten-1">Authenticate</a>
-      </div>
+        <a href="" id="download-button" input type="submit" class="btn-large btn-rnd waves-effect waves-light light-blue lighten-1">Authenticate</a>
+      </div>-->
 
     </div>
     <br><br>
