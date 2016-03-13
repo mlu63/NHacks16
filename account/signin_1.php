@@ -1,28 +1,28 @@
 
+
 <!-- PHP to handle DB interactions and login -->
 <?php
   include("config.php");
   session_start();
 
-  if (isset($_POST['email']) && $_POST['email'] !== '') {
-  //if($_SERVER["REQUEST_METHOD"] == "POST") {
+  //if (isset($_POST['email']) && $_POST['email'] !== '') {
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $myemail = mysqli_real_escape_string($db, $_POST['email']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
-    $sql = "SELECT * FROM UserProfile WHERE Email='.$myemail.' AND Password='.$mypassword.'";
+    $sql = "SELECT * FROM UserProfile WHERE Email='$myemail' AND Password='$mypassword'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
-      session_register("myemail");
+      //session_register("myemail");
       $_SESSION['login_user'] = $myemail;
       header("location: welcome.php");
-      echo "ass";
+
     } else {
       $error = "Invalid Information";
-      echo $error;
     }
   }
 ?>
@@ -41,44 +41,51 @@
 </head>
 <body>
 
-  <!-- Header -->
 
+      <title>Login Page</title>
+      
+      <style type = "text/css">
+         body {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:14px;
+         }
+         
+         label {
+            font-weight:bold;
+            width:100px;
+            font-size:14px;
+         }
+         
+         .box {
+            border:#666666 solid 1px;
+         }
+      </style>
+
+
+  <!-- Header -->
+  <br><br>
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo">GC</a>
   </nav>
 
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Log In.</h1>
-
-      <br><br>
-      <br><br>
-      <div class="row">
-        <form action = "" method = "POST" class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="email" name="email" type="email" class="validate">
-              <label for="email">E-mail</label>
+      <div align = "center">
+         <div style = "width:300px; border: solid 1px #333333; " align = "left">
+            <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+        
+            <div style = "margin:30px">
+               
+               <form action = "" method = "post">
+                  <label>Email  :</label><input type = "text" name = "email" class = "box"/><br /><br />
+                  <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                  <input type = "submit" value = " Submit "/><br />
+               </form>
+               
+               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+          
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" name="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-
-          <br><br>
-
-          <div class="row center">
-            <a href="" id="submit" input type="submit" class="btn-large btn-rnd waves-effect waves-light light-blue lighten-1">Authenticate</a>
-          </div>
-          <!-- TEST BUTTON -->
-
-          <!--<input type="submit" value="go"/>-->
-
-        </form>
+        
+         </div>
+      
       </div>
 
     </div>
@@ -115,5 +122,6 @@
 
   </body>
 </html>
+
 
 
